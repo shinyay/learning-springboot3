@@ -1,6 +1,6 @@
 # Learning Spring Boot 3 - Chapter 2
 
-![start.spring.io](https://user-images.githubusercontent.com/3072734/218413212-78e890ed-82c8-42c2-9590-100b9a5c3d0c.png)
+![start.spring.io](https://user-images.githubusercontent.com/3072734/218419407-bf23f769-f8fd-49f9-9865-58cb52ee6e17.png)
 
 Overview
 
