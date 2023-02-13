@@ -2,7 +2,7 @@
 
 ![start.spring.io](https://user-images.githubusercontent.com/3072734/218419407-bf23f769-f8fd-49f9-9865-58cb52ee6e17.png)
 
-Overview
+You are studying Chapter 2 of [Learning Spring Boot 3](https://www.packtpub.com/product/learning-spring-boot-30-third-edition/9781803233307).
 
 ## Description
 
