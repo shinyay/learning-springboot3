@@ -19,7 +19,7 @@ I'm learning **Chapter 2** of [Learning Spring Boot 3](https://www.packtpub.com/
 
 Access to <http://localhost:8080/>
 
-![image](https://user-images.githubusercontent.com/3072734/218420828-72abf726-3131-4d1c-83b4-b530ffee9183.png)
+![image](https://user-images.githubusercontent.com/3072734/218712063-bab299f1-c9fd-422a-9645-263ddb5097e7.png)
 
 
 ## Installation
