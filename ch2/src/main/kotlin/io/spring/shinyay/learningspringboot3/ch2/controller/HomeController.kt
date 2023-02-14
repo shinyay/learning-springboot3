@@ -19,5 +19,3 @@ class HomeController {
         return "index"
     }
 }
-
-data class Video(val name: String)
