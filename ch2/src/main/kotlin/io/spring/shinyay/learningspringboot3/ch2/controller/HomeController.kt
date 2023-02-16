@@ -11,7 +11,7 @@ class HomeController(val videoService: VideoService) {
 
     @GetMapping("/")
     fun index(model: Model): String {
-        model.addAttribute("videos", videos)
+        model.addAttribute("videos", videoService.getVideos())
         return "index"
     }
 }
