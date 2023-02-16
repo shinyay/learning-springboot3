@@ -17,7 +17,7 @@ class VideoService {
     fun getVideos(): List<Video> = videos
 
     fun create(newVideo: Video): Video? {
-        videos.addAll(newVideo)
+        videos.add(newVideo)
         return newVideo
     }
 }
