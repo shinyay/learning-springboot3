@@ -13,7 +13,5 @@ class VideoService {
         Video("Spring Cloud in Action"),
     )
 
-    fun getVideos(): List<Video> {
-        return videos;
-    }
+    fun getVideos(): List<Video> = videos
 }
