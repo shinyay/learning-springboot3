@@ -12,4 +12,8 @@ class VideoService {
         Video("Spring Framework 6 in Action"),
         Video("Spring Cloud in Action"),
     )
+
+    fun getVideos(): List<Video> {
+        return videos;
+    }
 }
