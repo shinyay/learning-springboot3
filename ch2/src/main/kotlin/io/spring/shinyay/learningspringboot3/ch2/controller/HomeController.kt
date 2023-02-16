@@ -14,4 +14,9 @@ class HomeController(val videoService: VideoService) {
         model.addAttribute("videos", videoService.getVideos())
         return "index"
     }
+
+    fun newVideo(video: Video): String {
+        videoService.create(video)
+        return "redirect:/"
+    }
 }
