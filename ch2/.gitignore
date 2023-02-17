@@ -42,3 +42,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Node ###
+# Dependency directories
+node_modules/
