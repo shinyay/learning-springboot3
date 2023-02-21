@@ -85,6 +85,16 @@
 							<goal>npm</goal>
 						</goals>
 					</execution>
+					<execution>
+						<id>npx run</id>
+						<goals>
+							<goal>npx</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<arguments>parcel build</arguments>
+						</configuration>
+					</execution>
 				</executions>
 				<configuration>
 					<nodeVersion>v18.14.1</nodeVersion>
