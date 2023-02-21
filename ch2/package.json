@@ -1,5 +1,5 @@
 {
   "devDependencies": {
-    "parcel": "latest"
+    "parcel": "2.8.3"
   }
 }
