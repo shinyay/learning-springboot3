@@ -1,4 +1,13 @@
 {
+  "name": "ch2",
+  "version": "0.0.1",
+  "description": "Learning Spring Boot3 Chapter2",
+  "source": "src/main/javascript/index.js",
+  "targets": {
+    "default": {
+      "distDir": "target/classes/static"
+    }
+  },
   "devDependencies": {
     "parcel": "2.8.3"
   }
