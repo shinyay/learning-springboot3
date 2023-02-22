@@ -41,4 +41,5 @@ frontend {
 	nodeVersion.set("18.14.2")
 	installScript.set("install")
 	cleanScript.set("run clean")
+	assembleScript.set("run assemble")
 }
