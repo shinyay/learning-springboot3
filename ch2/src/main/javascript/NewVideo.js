@@ -35,3 +35,5 @@ class NewVideo extends React.Component {
             </form>)
     }
 }
+
+export default NewVideo
