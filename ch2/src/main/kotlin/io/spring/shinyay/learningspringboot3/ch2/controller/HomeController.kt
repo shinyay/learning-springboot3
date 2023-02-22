@@ -23,6 +23,6 @@ class HomeController(val videoService: VideoService) {
         return "redirect:/"
     }
 
-    @GetMapping("react")
+    @GetMapping("/react")
     fun react() = "react"
 }
