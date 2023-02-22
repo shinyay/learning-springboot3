@@ -5,4 +5,8 @@ class NewVideo extends React.Component {
         super(props)
         this.state = {name: ""}
     }
+
+    handleChange(event) {
+        this.setState({name: event.target.value})
+    }
 }
