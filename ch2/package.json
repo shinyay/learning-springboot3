@@ -4,12 +4,11 @@
   "description": "Learning Spring Boot3 Chapter2",
   "source": "src/main/javascript/index.js",
   "scripts": {
-    "build": "echo Building frontend",
-    "assemble": "echo Assembling frontend",
-    "check": "echo Checking frontend && npm run lint && npm run test",
     "clean": "echo Cleaning frontend",
+    "check": "echo Checking frontend && npm run lint && npm run test",
     "lint": "echo Linting frontend",
-    "test": "echo Testing frontend"
+    "test": "echo Testing frontend",
+    "assemble": "echo Assembling frontend"
   },
   "targets": {
     "default": {
