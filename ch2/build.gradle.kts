@@ -42,4 +42,5 @@ frontend {
 	installScript.set("install")
 	cleanScript.set("run clean")
 	assembleScript.set("run assemble")
+	checkScript.set("run check")
 }
