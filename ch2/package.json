@@ -8,7 +8,7 @@
     "check": "echo Checking frontend && npm run lint && npm run test",
     "lint": "echo Linting frontend",
     "test": "echo Testing frontend",
-    "assemble": "echo Assembling frontend && npx parcel build"
+    "assemble": "echo Assembling frontend"
   },
   "targets": {
     "default": {
