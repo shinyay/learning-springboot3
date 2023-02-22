@@ -4,8 +4,8 @@ class NewVideo extends React.Component {
     constructor(props) {
         super(props)
         this.state = {name: ""}
-        this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
@@ -32,7 +32,8 @@ class NewVideo extends React.Component {
                        value={this.state.name}
                        onChange={this.handleChange}/>
                 <button type="submit">Submit</button>
-            </form>)
+            </form>
+        )
     }
 }
 
