@@ -11,5 +11,16 @@ class ListOfVideos extends React.Component {
         this.setState({data: json})
     }
 
-
+    render() {
+        return (
+            <ul>
+                {this.state.data.map(item =>
+                    <li>
+                        {item.name}
+                    </li>)}
+            </ul>
+        )
+    }
 }
+
+export default ListOfVideos
