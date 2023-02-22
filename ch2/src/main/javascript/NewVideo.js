@@ -14,7 +14,7 @@ class NewVideo extends React.Component {
 
     async handleSubmit(event) {
         event.preventDefault()
-        await fetch("/api/videos", {
+        await fetch("/api/v1/videos", {
             method: "POST",
             headers: {
                 "Content-type":
