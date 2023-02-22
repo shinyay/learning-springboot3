@@ -28,11 +28,10 @@ class NewVideo extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type=text
+                <input type="text"
                        value={this.state.name}
                        onChange={this.handleChange}/>
-                <button type={"submit"}>Submit</button>
-            </form>
-        )
+                <button type="submit">Submit</button>
+            </form>)
     }
 }
