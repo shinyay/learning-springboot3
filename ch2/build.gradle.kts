@@ -36,3 +36,8 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+frontend {
+	nodeVersion.set("18.14.2")
+	installScript.set("install")
+}
