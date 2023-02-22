@@ -3,6 +3,14 @@
   "version": "0.0.1",
   "description": "Learning Spring Boot3 Chapter2",
   "source": "src/main/javascript/index.js",
+  "scripts": {
+    "build": "echo Building frontend",
+    "assemble": "echo Assembling frontend",
+    "check": "echo Checking frontend && npm run lint && npm run test",
+    "clean": "echo Cleaning frontend",
+    "lint": "echo Linting frontend",
+    "test": "echo Testing frontend"
+  },
   "targets": {
     "default": {
       "distDir": "target/classes/static"
