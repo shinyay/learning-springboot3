@@ -43,4 +43,5 @@ frontend {
 	cleanScript.set("run clean")
 	assembleScript.set("run assemble")
 	checkScript.set("run check")
+	publishScript.set("run publish")
 }
