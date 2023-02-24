@@ -6,7 +6,7 @@ import jakarta.persistence.Id
 
 
 @Entity
-internal class VideoEntity(var name: String?, var description: String?) {
+class VideoEntity(var name: String?, var description: String?) {
     @Id
     @GeneratedValue
     var id: Long? = null
