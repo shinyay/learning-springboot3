@@ -2,6 +2,7 @@ package service
 
 import dto.VideoSearch
 import entity.Video
+import entity.VideoEntity
 import org.springframework.stereotype.Service
 
 @Service
@@ -21,5 +22,5 @@ class VideoService {
         return newVideo
     }
 
-    fun search(videoSearch: VideoSearch): List<VideoSearch>? {return null}
+    fun search(videoSearch: VideoSearch): List<VideoEntity>? {return null}
 }
