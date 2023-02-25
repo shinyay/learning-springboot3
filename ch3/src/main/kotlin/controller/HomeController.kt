@@ -1,5 +1,6 @@
 package controller
 
+import dto.VideoSearch
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -19,5 +20,9 @@ class HomeController(val videoService: VideoService) {
     fun newVideo(@ModelAttribute video: Video): String {
         videoService.create(video)
         return "redirect:/"
+    }
+
+    fun multiFieldSearch(@ModelAttribute search: VideoSearch, model: Model): String {
+
     }
 }
