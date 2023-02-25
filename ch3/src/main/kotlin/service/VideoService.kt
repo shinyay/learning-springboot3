@@ -6,6 +6,7 @@ import entity.VideoEntity
 import org.springframework.stereotype.Service
 import org.springframework.util.StringUtils
 import repository.VideoRepository
+import java.util.*
 
 @Service
 class VideoService(val repository: VideoRepository) {
@@ -24,5 +25,22 @@ class VideoService(val repository: VideoRepository) {
         return newVideo
     }
 
+    fun search(videoSearch: VideoSearch): List<VideoEntity>? {
+        if (StringUtils.hasText(videoSearch.name)
+            && StringUtils.hasText(videoSearch.description)) {
+            return repository
+                .findByNameContainsOrDescriptionContainsAllIgnoreCase(
+                    videoSearch.name, videoSearch.description);
+        }
 
+        if (StringUtils.hasText(videoSearch.name)) {
+            return repository.findByNameContainsIgnoreCase(videoSearch.name);
+        }
+
+        if (StringUtils.hasText(videoSearch.description)) {
+            return repository.findByDescriptionContainsIgnoreCase(videoSearch.description);
+        }
+
+        return Collections.emptyList();
+    }
 }
