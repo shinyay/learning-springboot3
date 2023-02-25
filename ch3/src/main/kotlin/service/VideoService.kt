@@ -1,5 +1,6 @@
 package service
 
+import dto.VideoSearch
 import entity.Video
 import org.springframework.stereotype.Service
 
@@ -19,4 +20,6 @@ class VideoService {
         videos.add(newVideo)
         return newVideo
     }
+
+    fun search(videoSearch: VideoSearch): List<VideoSearch>? {return null}
 }
