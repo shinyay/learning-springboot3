@@ -30,15 +30,15 @@ class VideoService(val repository: VideoRepository) {
             && StringUtils.hasText(videoSearch.description)) {
             return repository
                 .findByNameContainsOrDescriptionContainsAllIgnoreCase(
-                    videoSearch.name, videoSearch.description);
+                    videoSearch.name, videoSearch.description)
         }
 
         if (StringUtils.hasText(videoSearch.name)) {
-            return repository.findByNameContainsIgnoreCase(videoSearch.name);
+            return repository.findByNameContainsIgnoreCase(videoSearch.name)
         }
 
         if (StringUtils.hasText(videoSearch.description)) {
-            return repository.findByDescriptionContainsIgnoreCase(videoSearch.description);
+            return repository.findByDescriptionContainsIgnoreCase(videoSearch.description)
         }
 
         return Collections.emptyList();
