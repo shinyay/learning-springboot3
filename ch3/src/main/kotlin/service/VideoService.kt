@@ -56,7 +56,9 @@ class VideoService(val repository: VideoRepository) {
         }
         val example: Example<VideoEntity> = Example.of(
             probe,
-            matchingAny().withIgnoreCase().withStringMatcher(StringMatcher.CONTAINING)
+            matchingAny()
+                .withIgnoreCase()
+                .withStringMatcher(StringMatcher.CONTAINING)
         )
         return repository.findAll(example)
     }
