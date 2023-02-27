@@ -8,7 +8,7 @@ interface VideoRepository : JpaRepository<VideoEntity?, Long?> {
 
     fun findByNameContainsIgnoreCase(partialName: String): List<VideoEntity>
 
-    fun findByDescriptionContainsIgnoreCase(partialDescription:String)
+    fun findByDescriptionContainsIgnoreCase(partialDescription:String): List<VideoEntity>
 
     fun findByNameContainsOrDescriptionContainsAllIgnoreCase(partialName: String, partialDescription: String)
 }
