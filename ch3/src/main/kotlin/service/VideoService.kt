@@ -25,10 +25,9 @@ class VideoService(val repository: VideoRepository) {
 
     fun getVideos(): List<VideoEntity?> = repository.findAll()
 
-    fun create(newVideo: NewVideo): NewVideo? {
-        videos.add(newVideo)
-        return newVideo
-    }
+    fun create(newVideo: NewVideo) = repository.saveAndFlush(
+        VideoEntity(newVideo.name, newVideo.description)
+    )
 
     fun search(videoSearch: VideoSearch): List<VideoEntity>? {
         if (StringUtils.hasText(videoSearch.name)
@@ -46,7 +45,7 @@ class VideoService(val repository: VideoRepository) {
             return repository.findByDescriptionContainsIgnoreCase(videoSearch.description)
         }
 
-        return Collections.emptyList();
+        return Collections.emptyList()
     }
 
     fun search(universalSearch: UniversalSearch): List<VideoEntity>? {
