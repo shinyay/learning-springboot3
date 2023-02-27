@@ -1,12 +1,18 @@
 package service
 
+import dto.UniversalSearch
 import dto.VideoSearch
 import entity.Video
 import entity.VideoEntity
+import org.springframework.data.domain.Example
+import org.springframework.data.domain.ExampleMatcher
+import org.springframework.data.domain.ExampleMatcher.StringMatcher
+import org.springframework.data.domain.ExampleMatcher.matchingAny
 import org.springframework.stereotype.Service
 import org.springframework.util.StringUtils
 import repository.VideoRepository
 import java.util.*
+
 
 @Service
 class VideoService(val repository: VideoRepository) {
@@ -42,5 +48,18 @@ class VideoService(val repository: VideoRepository) {
         }
 
         return Collections.emptyList();
+    }
+
+    fun search(universalSearch: UniversalSearch): List<VideoEntity>? {
+        val probe = VideoEntity()
+        if (StringUtils.hasText(universalSearch.value)) {
+            probe.name = universalSearch.value
+            probe.description = universalSearch.value
+        }
+        val example: Example<VideoEntity> = Example.of(
+            probe,
+            matchingAny().withIgnoreCase().withStringMatcher(StringMatcher.CONTAINING)
+        )
+        return repository.findAll(example)
     }
 }

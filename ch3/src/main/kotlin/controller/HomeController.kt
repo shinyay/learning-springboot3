@@ -1,5 +1,6 @@
 package controller
 
+import dto.UniversalSearch
 import dto.VideoSearch
 import entity.Video
 import entity.VideoEntity
@@ -29,6 +30,13 @@ class HomeController(val videoService: VideoService) {
     fun multiFieldSearch(@ModelAttribute search: VideoSearch, model: Model): String {
         val searchResult: List<VideoEntity>? = videoService.search(search)
         model.addAttribute("videos", searchResult)
+        return "index"
+    }
+
+    @PostMapping("/universal-search")
+    fun universalSearch(@ModelAttribute search: UniversalSearch, model: Model): String {
+        val searchResults = videoService.search(search)
+        model.addAttribute("videos", searchResults)
         return "index"
     }
 }
