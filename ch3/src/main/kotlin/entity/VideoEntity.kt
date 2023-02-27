@@ -11,5 +11,5 @@ class VideoEntity(var name: String?, var description: String?) {
     @GeneratedValue
     var id: Long? = null
 
-    protected constructor() : this(null, null)
+    constructor() : this(null, null)
 }
