@@ -2,7 +2,7 @@ package controller
 
 import dto.UniversalSearch
 import dto.VideoSearch
-import entity.NewVideo
+import dto.NewVideo
 import entity.VideoEntity
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
