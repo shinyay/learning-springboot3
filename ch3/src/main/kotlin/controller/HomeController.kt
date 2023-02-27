@@ -2,7 +2,7 @@ package controller
 
 import dto.UniversalSearch
 import dto.VideoSearch
-import entity.Video
+import entity.NewVideo
 import entity.VideoEntity
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -21,7 +21,7 @@ class HomeController(val videoService: VideoService) {
     }
 
     @PostMapping("/new-video")
-    fun newVideo(@ModelAttribute video: Video): String {
+    fun newVideo(@ModelAttribute video: NewVideo): String {
         videoService.create(video)
         return "redirect:/"
     }
