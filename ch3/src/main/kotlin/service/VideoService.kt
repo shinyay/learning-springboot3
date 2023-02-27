@@ -2,7 +2,7 @@ package service
 
 import dto.UniversalSearch
 import dto.VideoSearch
-import entity.NewVideo
+import dto.NewVideo
 import entity.VideoEntity
 import org.springframework.data.domain.Example
 import org.springframework.data.domain.ExampleMatcher.StringMatcher
