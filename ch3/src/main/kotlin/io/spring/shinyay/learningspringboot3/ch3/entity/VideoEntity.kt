@@ -1,4 +1,4 @@
-package entity
+package io.spring.shinyay.learningspringboot3.ch3.entity
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
