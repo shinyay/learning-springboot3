@@ -1,3 +1,3 @@
 package dto
 
-data class UniversalSearch()
+data class UniversalSearch(val value: String)
