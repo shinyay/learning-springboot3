@@ -1,9 +1,10 @@
 package service
 
+import dto.NewVideo
 import dto.UniversalSearch
 import dto.VideoSearch
-import dto.NewVideo
 import entity.VideoEntity
+import jakarta.annotation.PostConstruct
 import org.springframework.data.domain.Example
 import org.springframework.data.domain.ExampleMatcher.StringMatcher
 import org.springframework.data.domain.ExampleMatcher.matchingAny
@@ -16,12 +17,27 @@ import java.util.*
 @Service
 class VideoService(val repository: VideoRepository) {
 
-    private var videos: MutableList<NewVideo> = mutableListOf(
-        NewVideo("Learning Spring Boot 3", ""),
-        NewVideo("Spring Boot 3 in Action", ""),
-        NewVideo("Spring Framework 6 in Action", ""),
-        NewVideo("Spring Cloud in Action", ""),
-    )
+    @PostConstruct
+    fun initDatabase() {
+        repository.save(
+            VideoEntity(
+                "Learning Spring Boot 3",
+                "Learn Spring Boot 3 with this book."
+            )
+        )
+        repository.save(
+            VideoEntity(
+                "Learn how Spring Boot 3 works",
+                ""
+            )
+        )
+        repository.save(
+            VideoEntity(
+                "Spring Framework 6",
+                "Learn how Spring Framework 6 works"
+            )
+        )
+    }
 
     fun getVideos(): List<VideoEntity?> = repository.findAll()
 
