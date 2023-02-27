@@ -1,3 +1,3 @@
 package entity
 
-data class Video(val name: String, val description: String)
+data class NewVideo(val name: String, val description: String)
