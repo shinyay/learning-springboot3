@@ -21,9 +21,12 @@
     {{#videos}}
         <li>{{name}}</li>
     {{/videos}}
+
+    <form action="/new-video" method="post">
+        <input type="text" name="name">
+        <input type="text" name="description">
+        <button type="submit">Submit</button>
+    </form>
 </ul>
 
-<form action="/new-video" method="post">
-    <input type="text" name="name">
-    <button type="submit">Submit</button>
-</form>
+
