@@ -25,7 +25,7 @@ class VideoService(val repository: VideoRepository) {
 
     fun getVideos(): List<VideoEntity?> = repository.findAll()
 
-    fun create(newVideo: NewVideo) = repository.saveAndFlush(
+    fun create(newVideo: NewVideo): VideoEntity? = repository.saveAndFlush(
         VideoEntity(newVideo.name, newVideo.description)
     )
 
