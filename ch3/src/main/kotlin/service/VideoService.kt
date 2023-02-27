@@ -24,7 +24,7 @@ class VideoService(val repository: VideoRepository) {
         Video("Spring Cloud in Action", ""),
     )
 
-    fun getVideos(): List<Video> = videos
+    fun getVideos(): List<VideoEntity?> = repository.findAll()
 
     fun create(newVideo: Video): Video? {
         videos.add(newVideo)
