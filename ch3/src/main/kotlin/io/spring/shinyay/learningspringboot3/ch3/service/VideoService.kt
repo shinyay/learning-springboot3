@@ -1,16 +1,16 @@
-package service
+package io.spring.shinyay.learningspringboot3.ch3.service
 
-import dto.NewVideo
-import dto.UniversalSearch
-import dto.VideoSearch
-import entity.VideoEntity
+import io.spring.shinyay.learningspringboot3.ch3.dto.NewVideo
+import io.spring.shinyay.learningspringboot3.ch3.dto.UniversalSearch
+import io.spring.shinyay.learningspringboot3.ch3.dto.VideoSearch
+import io.spring.shinyay.learningspringboot3.ch3.entity.VideoEntity
 import jakarta.annotation.PostConstruct
 import org.springframework.data.domain.Example
 import org.springframework.data.domain.ExampleMatcher.StringMatcher
 import org.springframework.data.domain.ExampleMatcher.matchingAny
 import org.springframework.stereotype.Service
 import org.springframework.util.StringUtils
-import repository.VideoRepository
+import io.spring.shinyay.learningspringboot3.ch3.repository.VideoRepository
 import java.util.*
 
 
