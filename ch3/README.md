@@ -1,6 +1,6 @@
-# Learning Spring Boot 3 - Chapter 2
+# Learning Spring Boot 3 - Chapter 3
 
-![start.spring.io]()
+![start.spring.io](https://user-images.githubusercontent.com/3072734/221808217-9104fb50-ff57-4482-885d-54013e739952.png)
 
 I'm learning **Chapter 3** of [Learning Spring Boot 3](https://www.packtpub.com/product/learning-spring-boot-30-third-edition/9781803233307).
 
