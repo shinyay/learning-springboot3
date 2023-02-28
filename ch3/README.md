@@ -17,11 +17,6 @@ I'm learning **Chapter 3** of [Learning Spring Boot 3](https://www.packtpub.com/
 
 ## Usage
 
-Access to <http://localhost:8080/>
-
-![image](https://user-images.githubusercontent.com/3072734/218712063-bab299f1-c9fd-422a-9645-263ddb5097e7.png)
-
-
 ## Installation
 
 ## References
