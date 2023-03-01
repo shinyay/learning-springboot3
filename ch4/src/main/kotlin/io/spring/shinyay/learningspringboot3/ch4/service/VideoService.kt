@@ -1,4 +1,4 @@
-package io.spring.shinyay.learningspringboot3.ch3.service
+package io.spring.shinyay.learningspringboot3.ch4.service
 
 import io.spring.shinyay.learningspringboot3.ch3.dto.NewVideo
 import io.spring.shinyay.learningspringboot3.ch3.dto.UniversalSearch
