@@ -1,7 +1,7 @@
 # Learning Spring Boot 3 - Chapter 4
 Securing an Application with Spring Boot
 
-![start.spring.io]
+![start.spring.io](https://user-images.githubusercontent.com/3072734/222112098-56894bd6-1bba-40f7-a013-007a4a7330b7.png)
 
 I'm learning **Chapter 4** of [Learning Spring Boot 3](https://www.packtpub.com/product/learning-spring-boot-30-third-edition/9781803233307).
 
