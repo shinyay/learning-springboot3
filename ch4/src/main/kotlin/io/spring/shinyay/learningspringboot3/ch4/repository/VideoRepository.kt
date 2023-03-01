@@ -1,6 +1,6 @@
 package io.spring.shinyay.learningspringboot3.ch4.repository
 
-import io.spring.shinyay.learningspringboot3.ch3.entity.VideoEntity
+import io.spring.shinyay.learningspringboot3.ch4.entity.VideoEntity
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface VideoRepository : JpaRepository<VideoEntity?, Long?> {
