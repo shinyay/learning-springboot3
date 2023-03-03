@@ -8,6 +8,6 @@ class SecurityConfig {
 
     @Bean
     fun userDetailsService() {
-        
+
     }
 }
