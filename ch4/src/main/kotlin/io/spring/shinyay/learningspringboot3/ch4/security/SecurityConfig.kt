@@ -1,4 +1,4 @@
-package io.spring.shinyay.learningspringboot3.ch4.security
+package io.spring.shinyay.learningspringboot3.ch4.video.security
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
