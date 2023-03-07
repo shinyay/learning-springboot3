@@ -1,4 +1,6 @@
 package io.spring.shinyay.learningspringboot3.ch4.security.repository
 
-class UserManagementRepository {
+import org.springframework.data.jpa.repository.JpaRepository
+
+interface UserManagementRepository : JpaRepository {
 }
