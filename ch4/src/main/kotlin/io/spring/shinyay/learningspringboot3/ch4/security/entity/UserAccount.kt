@@ -3,6 +3,8 @@ package io.spring.shinyay.learningspringboot3.ch4.security.entity
 import jakarta.persistence.*
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
+import org.springframework.security.core.userdetails.User
+import org.springframework.security.core.userdetails.UserDetails
 
 
 @Entity
@@ -25,5 +27,13 @@ class UserAccount() {
             .map(::SimpleGrantedAuthority)
             .map { it as GrantedAuthority }
             .toList()
+    }
+
+    fun asUser(): UserDetails {
+        return User.withDefaultPasswordEncoder()
+            .username(username)
+            .password(password)
+            .authorities(authorities)
+            .build()
     }
 }
