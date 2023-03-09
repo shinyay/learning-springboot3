@@ -32,6 +32,7 @@
     <form action="/new-video" method="post">
         <input type="text" name="name">
         <input type="text" name="description">
+        <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
         <button type="submit">Submit</button>
     </form>
 </ul>
