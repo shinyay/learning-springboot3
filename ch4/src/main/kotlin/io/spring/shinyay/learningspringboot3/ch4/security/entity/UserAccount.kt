@@ -16,23 +16,5 @@ class UserAccount {
     val password: String? = null
 
     @ElementCollection(fetch = FetchType.EAGER)
-    private val authorities: MutableList<GrantedAuthority>? = mutableListOf()
-
-    protected constructor()
-    constructor(username: String?, password: String?, vararg authorities: String) {
-        this.username = username
-        this.password = password
-        this.authorities = Arrays.stream(authorities) //
-            .map { role: String? ->
-                SimpleGrantedAuthority(
-                    role
-                )
-            } //
-            .map { obj: SimpleGrantedAuthority? ->
-                GrantedAuthority::class.java.cast(
-                    obj
-                )
-            } //
-            .toList()
-    }
+    private val authorities: MutableList<GrantedAuthority> = mutableListOf()
 }
