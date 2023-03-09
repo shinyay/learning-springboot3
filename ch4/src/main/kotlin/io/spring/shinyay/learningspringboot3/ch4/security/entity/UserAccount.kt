@@ -16,5 +16,5 @@ class UserAccount {
     val password: String? = null
 
     @ElementCollection(fetch = FetchType.EAGER)
-    private val authorities: MutableList<GrantedAuthority> = mutableListOf()
+    val authorities: MutableList<GrantedAuthority> = mutableListOf()
 }
