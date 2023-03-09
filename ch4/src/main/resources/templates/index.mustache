@@ -17,6 +17,13 @@
     <button type="submit">Search</button>
 </form>
 
+<form action="/search" method="post">
+    <label for="value">Search:</label>
+    <input type="text" name="value">
+    <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
+    <button type="submit">Search</button>
+</form>
+
 <ul>
     {{#videos}}
         <li>{{name}}</li>
