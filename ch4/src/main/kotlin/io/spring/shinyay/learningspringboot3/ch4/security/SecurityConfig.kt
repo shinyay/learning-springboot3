@@ -56,6 +56,8 @@ class SecurityConfig {
     fun configureSecurity(http: HttpSecurity): SecurityFilterChain {
         http.authorizeHttpRequests()
             .requestMatchers("/login").permitAll()
+            .requestMatchers("/", "/search").authenticated()
+            
             .and()
             .httpBasic()
         return http.build()
