@@ -59,6 +59,7 @@ class SecurityConfig {
             .requestMatchers("/login").permitAll()
             .requestMatchers("/", "/search").authenticated()
             .requestMatchers(HttpMethod.GET, "/api/**").authenticated()
+            .requestMatchers(HttpMethod.POST, "/new-video", "api/**").hasRole("ADMIN")
             .and()
             .httpBasic()
         return http.build()
