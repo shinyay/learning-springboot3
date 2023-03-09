@@ -54,6 +54,10 @@ class SecurityConfig {
 
     @Bean
     fun configureSecurity(http: HttpSecurity): SecurityFilterChain {
+        http.authorizeHttpRequests()
+            .requestMatchers("/login").permitAll()
+            .and()
+            .httpBasic()
         return http.build()
     }
 
