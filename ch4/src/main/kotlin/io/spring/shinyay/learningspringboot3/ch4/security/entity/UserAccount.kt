@@ -17,7 +17,7 @@ class UserAccount() {
     var password: String? = null
 
     @ElementCollection(fetch = FetchType.EAGER)
-    var authorities: List<GrantedAuthority> = mutableListOf()
+    var authorities: MutableList<GrantedAuthority> = mutableListOf()
 
     constructor(username: String, password: String, vararg authorities: String)
             : this() {
@@ -26,7 +26,7 @@ class UserAccount() {
         this.authorities = authorities
             .map(::SimpleGrantedAuthority)
             .map { it as GrantedAuthority }
-            .toList()
+            .toMutableList()
     }
 
     fun asUser(): UserDetails {
