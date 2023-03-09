@@ -33,7 +33,8 @@ class HomeController(val videoService: VideoService) {
 //        return "index"
 //    }
 
-    @PostMapping("/universal-search")
+//    @PostMapping("/universal-search")
+    @PostMapping("/search")
     fun universalSearch(@ModelAttribute search: UniversalSearch, model: Model): String {
         val searchResults = videoService.search(search)
         model.addAttribute("videos", searchResults)
