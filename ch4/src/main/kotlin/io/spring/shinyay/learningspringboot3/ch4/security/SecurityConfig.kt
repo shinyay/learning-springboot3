@@ -6,6 +6,7 @@ import io.spring.shinyay.learningspringboot3.ch4.security.repository.UserReposit
 import org.springframework.boot.CommandLineRunner
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.http.HttpMethod
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.core.userdetails.User
 import org.springframework.security.core.userdetails.UserDetailsService
@@ -57,7 +58,7 @@ class SecurityConfig {
         http.authorizeHttpRequests()
             .requestMatchers("/login").permitAll()
             .requestMatchers("/", "/search").authenticated()
-            
+            .requestMatchers(HttpMethod.GET, "/api/**").authenticated()
             .and()
             .httpBasic()
         return http.build()
