@@ -62,6 +62,8 @@ class SecurityConfig {
             .requestMatchers(HttpMethod.POST, "/new-video", "api/**").hasRole("ADMIN")
             .anyRequest().denyAll()
             .and()
+            .formLogin()
+            .and()
             .httpBasic()
         return http.build()
     }
