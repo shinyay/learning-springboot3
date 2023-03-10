@@ -1,4 +1,4 @@
-# Learning Spring Boot 3 - Chapter 4
+# Learning Spring Boot 3 - Chapter 4 - Method Security
 Securing an Application with Spring Boot
 
 ![start.spring.io](https://user-images.githubusercontent.com/3072734/222112098-56894bd6-1bba-40f7-a013-007a4a7330b7.png)
