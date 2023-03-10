@@ -21,7 +21,8 @@ class SecurityConfig {
     @Bean
     fun initUsers(repository: UserManagementRepository): CommandLineRunner? {
         return CommandLineRunner {
-            repository.save(UserAccount("user", "password", "ROLE_USER"))
+            repository.save(UserAccount("alice", "password", "ROLE_USER"))
+            repository.save(UserAccount("bob", "password", "ROLE_USER"))
             repository.save(UserAccount("admin", "password", "ROLE_ADMIN"))
         }
     }
