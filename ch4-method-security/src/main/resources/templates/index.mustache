@@ -37,4 +37,14 @@
     </form>
 </ul>
 
+{{#videos}}
+    <li>
+        {{name}}
+        <form action="/delete/video/{{id}}" method="post">
+            <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+{{/videos}}
+
 
