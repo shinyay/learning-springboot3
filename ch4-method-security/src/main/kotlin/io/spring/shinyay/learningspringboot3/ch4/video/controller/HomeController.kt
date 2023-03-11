@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
 import io.spring.shinyay.learningspringboot3.ch4.video.service.VideoService
+import org.springframework.security.core.Authentication
 
 @Controller
 class HomeController(val videoService: VideoService) {
@@ -21,8 +22,8 @@ class HomeController(val videoService: VideoService) {
     }
 
     @PostMapping("/new-video")
-    fun newVideo(@ModelAttribute video: NewVideo): String {
-        videoService.create(video)
+    fun newVideo(@ModelAttribute video: NewVideo, authentication: Authentication): String {
+        videoService.create(video, authentication.name)
         return "redirect:/"
     }
 
