@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
 import io.spring.shinyay.learningspringboot3.ch4.video.service.VideoService
 import org.springframework.security.core.Authentication
+import org.springframework.web.bind.annotation.PathVariable
 
 @Controller
 class HomeController(val videoService: VideoService) {
@@ -40,5 +41,10 @@ class HomeController(val videoService: VideoService) {
         val searchResults = videoService.search(search)
         model.addAttribute("videos", searchResults)
         return "index"
+    }
+
+    fun deleteVideo(@PathVariable videoId: Long): String {
+        videoService.delete(videoId)
+        return "redirect:/"
     }
 }
