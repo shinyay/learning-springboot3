@@ -43,6 +43,7 @@ class HomeController(val videoService: VideoService) {
         return "index"
     }
 
+    @PostMapping("/delete/videos/{videoId")
     fun deleteVideo(@PathVariable videoId: Long): String {
         videoService.delete(videoId)
         return "redirect:/"
