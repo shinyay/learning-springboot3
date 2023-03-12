@@ -10,5 +10,6 @@ interface UserRepository : Repository<UserAccount, Long> {
     fun findByUsername(username: String): UserAccount
 
     @PreAuthorize("#entity.username == authentication.name")
+    @Override
     fun delete(entity: VideoEntity)
 }
