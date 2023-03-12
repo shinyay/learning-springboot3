@@ -29,7 +29,7 @@ class VideoService(val repository: VideoRepository) {
         )
         repository.save(
             VideoEntity(
-                "bob",
+                "alice",
                 "Learn how Spring Boot 3 works",
                 ""
             )
