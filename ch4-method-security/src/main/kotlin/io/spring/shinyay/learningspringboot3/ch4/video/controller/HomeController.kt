@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.PathVariable
 class HomeController(val videoService: VideoService) {
 
     @GetMapping("/")
-    fun index(model: Model): String {
+    fun index(model: Model, authentication: Authentication): String {
         model.addAttribute("videos", videoService.getVideos())
+        model.addAttribute("authentication", authentication)
+
         return "index"
     }
 
