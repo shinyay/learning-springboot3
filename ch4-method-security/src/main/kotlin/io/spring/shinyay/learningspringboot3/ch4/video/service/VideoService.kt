@@ -82,7 +82,7 @@ class VideoService(val repository: VideoRepository) {
 
     fun delete(videoId: Long) {
         repository.findById(videoId)
-            .map<Boolean> { videoEntity: VideoEntity? ->
+            .map<Boolean> { videoEntity ->
                 repository.delete(videoEntity!!)
                 true
             }
