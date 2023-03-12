@@ -82,10 +82,10 @@ class VideoService(val repository: VideoRepository) {
 
     fun delete(videoId: Long) {
         repository.findById(videoId)
-            .map<Boolean>(Function { videoEntity: VideoEntity? ->
+            .map<Boolean> { videoEntity: VideoEntity? ->
                 repository.delete(videoEntity!!)
                 true
-            })
+            }
             .orElseThrow {
                 RuntimeException(
                     "No video at $videoId"
