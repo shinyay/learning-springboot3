@@ -1,5 +1,6 @@
 package io.spring.shinyay.learningspringboot3.ch4.youtube
 
+import io.spring.shinyay.learningspringboot3.ch4.youtube.response.SearchListResponse
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.service.annotation.GetExchange
 
