@@ -9,10 +9,7 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.http.HttpMethod
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
-import org.springframework.security.core.userdetails.User
 import org.springframework.security.core.userdetails.UserDetailsService
-import org.springframework.security.provisioning.InMemoryUserDetailsManager
-import org.springframework.security.provisioning.UserDetailsManager
 import org.springframework.security.web.SecurityFilterChain
 
 
@@ -57,17 +54,17 @@ class SecurityConfig {
 //    }
 
     @Bean
-    fun configureSecurity(http: HttpSecurity): SecurityFilterChain {
-        http.authorizeHttpRequests()
-            .requestMatchers("/login").permitAll()
-            .requestMatchers("/", "/search").authenticated()
-            .requestMatchers(HttpMethod.GET, "/api/**").authenticated()
-            .requestMatchers("/admin").hasRole("ADMIN")
-            .requestMatchers(HttpMethod.POST, "/new-video", "/delete/**").authenticated()
-            .anyRequest().denyAll()
-            .and()
-            .formLogin()
-            .and()
+    fun configureSecurity(http: HttpSecurity): SecurityFilterChain? {
+        http.authorizeHttpRequests() //
+            .requestMatchers("/login").permitAll() //
+            .requestMatchers("/", "/search").authenticated() //
+            .requestMatchers(HttpMethod.GET, "/api/**").authenticated() //
+            .requestMatchers("/admin").hasRole("ADMIN") //
+            .requestMatchers(HttpMethod.POST, "/delete/**", "/new-video").authenticated() //
+            .anyRequest().denyAll() //
+            .and() //
+            .formLogin() //
+            .and() //
             .httpBasic()
         return http.build()
     }
