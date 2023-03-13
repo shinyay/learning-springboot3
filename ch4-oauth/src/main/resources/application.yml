@@ -11,3 +11,10 @@ spring:
             clientId: 642634252040-0g911vto6i0967tt1hioltni4ncbs52e.apps.googleusercontent.com
             clientSecret: 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
             scope: openid,profile,email,https://www.googleapis.com/auth/youtube
+logging:
+  level:
+    io.spring.shinyay.learningspringboot3.ch4: DEBUG
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE
+    org.springframework.web: TRACE
+    org.springframework.web.reactive: TRACE
