@@ -62,7 +62,7 @@ class SecurityConfig {
             .requestMatchers("/login").permitAll()
             .requestMatchers("/", "/search").authenticated()
             .requestMatchers(HttpMethod.GET, "/api/**").authenticated()
-            .requestMatchers(HttpMethod.POST, "/new-video", "/delete").authenticated()
+            .requestMatchers(HttpMethod.POST, "/new-video", "/delete/**").authenticated()
             .anyRequest().denyAll()
             .and()
             .formLogin()
