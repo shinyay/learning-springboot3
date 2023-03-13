@@ -1,71 +1,32 @@
 package io.spring.shinyay.learningspringboot3.ch4.security
 
-import io.spring.shinyay.learningspringboot3.ch4.security.entity.UserAccount
-import io.spring.shinyay.learningspringboot3.ch4.security.repository.UserManagementRepository
-import io.spring.shinyay.learningspringboot3.ch4.security.repository.UserRepository
-import org.springframework.boot.CommandLineRunner
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.http.HttpMethod
-import org.springframework.security.config.annotation.web.builders.HttpSecurity
-import org.springframework.security.core.userdetails.User
-import org.springframework.security.core.userdetails.UserDetailsService
-import org.springframework.security.provisioning.InMemoryUserDetailsManager
-import org.springframework.security.provisioning.UserDetailsManager
-import org.springframework.security.web.SecurityFilterChain
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClientProviderBuilder
+import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository
+import org.springframework.security.oauth2.client.web.DefaultOAuth2AuthorizedClientManager
+import org.springframework.security.oauth2.client.web.OAuth2AuthorizedClientRepository
 
 
 @Configuration
 class SecurityConfig {
-
     @Bean
-    fun initUsers(repository: UserManagementRepository): CommandLineRunner? {
-        return CommandLineRunner {
-            repository.save(UserAccount("user", "password", "ROLE_USER"))
-            repository.save(UserAccount("admin", "password", "ROLE_ADMIN"))
-        }
+    fun clientManager(
+        clientRegRepo: ClientRegistrationRepository?,
+        authClientRepo: OAuth2AuthorizedClientRepository?
+    ): OAuth2AuthorizedClientManager {
+        val clientProvider = OAuth2AuthorizedClientProviderBuilder.builder()
+            .authorizationCode()
+            .refreshToken()
+            .clientCredentials()
+            .password()
+            .build()
+        val clientManager = DefaultOAuth2AuthorizedClientManager(
+            clientRegRepo, authClientRepo
+        )
+        clientManager
+            .setAuthorizedClientProvider(clientProvider)
+        return clientManager
     }
-
-    @Bean
-    fun userDetailsService(repository: UserRepository): UserDetailsService {
-        return UserDetailsService {
-            repository.findByUsername(it).asUser()
-        }
-    }
-
-//    @Bean
-//    fun userDetailsService(): UserDetailsService {
-//        val userDetailsManager: UserDetailsManager = InMemoryUserDetailsManager()
-//        userDetailsManager.createUser(
-//            User.withDefaultPasswordEncoder()
-//                .username("user")
-//                .password("password")
-//                .roles("USER")
-//                .build()
-//        )
-//        userDetailsManager.createUser(
-//            User.withDefaultPasswordEncoder()
-//                .username("admin")
-//                .password("password")
-//                .roles("ADMIN")
-//                .build()
-//        )
-//        return userDetailsManager
-//    }
-
-    @Bean
-    fun configureSecurity(http: HttpSecurity): SecurityFilterChain {
-        http.authorizeHttpRequests()
-            .requestMatchers("/login").permitAll()
-            .requestMatchers("/", "/search").authenticated()
-            .requestMatchers(HttpMethod.GET, "/api/**").authenticated()
-            .requestMatchers(HttpMethod.POST, "/new-video", "api/**").hasRole("ADMIN")
-            .anyRequest().denyAll()
-            .and()
-            .formLogin()
-            .and()
-            .httpBasic()
-        return http.build()
-    }
-
 }
