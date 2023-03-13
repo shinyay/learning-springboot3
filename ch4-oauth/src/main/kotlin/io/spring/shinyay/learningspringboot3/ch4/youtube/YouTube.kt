@@ -11,7 +11,7 @@ interface YouTube {
         @RequestParam maxResults: Int,  //
         @RequestParam order: Sort?
     ): SearchListResponse?
-    
+
     enum class Sort(private val type: String) {
         DATE("date"),
         VIEW_COUNT("viewCount"),
