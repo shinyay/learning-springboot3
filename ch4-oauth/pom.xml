@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>io.spring.shinyay.learningspringboot3</groupId>
-	<artifactId>ch4</artifactId>
+	<artifactId>ch4-oauth</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Chapter 4</name>
 	<description>Securing an Application with Spring Boot</description>
