@@ -8,6 +8,6 @@ spring:
       client:
         registration:
           google:
-            clientId: "642634252040-0g911vto6i0967tt1hioltni4ncbs52e.apps.googleusercontent.com"
-            clientSecret: "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"
+            clientId: 642634252040-0g911vto6i0967tt1hioltni4ncbs52e.apps.googleusercontent.com
+            clientSecret: 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
             scope: openid,profile,email,https://www.googleapis.com/auth/youtube
