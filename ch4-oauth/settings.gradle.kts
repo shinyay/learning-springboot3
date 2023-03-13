@@ -1,1 +1,1 @@
-rootProject.name = "ch4"
+rootProject.name = "ch4-oauth"
