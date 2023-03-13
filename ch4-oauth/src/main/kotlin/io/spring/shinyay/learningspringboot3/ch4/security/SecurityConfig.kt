@@ -24,9 +24,9 @@ class SecurityConfig {
             .build()
         val clientManager = DefaultOAuth2AuthorizedClientManager(
             clientRegRepo, authClientRepo
-        )
-        clientManager
-            .setAuthorizedClientProvider(clientProvider)
+        ).apply {
+            setAuthorizedClientProvider(clientProvider)
+        }
         return clientManager
     }
 }
