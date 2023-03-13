@@ -1,4 +1,4 @@
-package io.spring.shinyay.learningspringboot3.ch4
+package io.spring.shinyay.learningspringboot3.ch4.youtube
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
