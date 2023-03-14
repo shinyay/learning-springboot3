@@ -11,9 +11,10 @@ class HomeController(private val youTube: YouTube) {
     @GetMapping("/")
     fun index(model: Model): String {
         model.addAttribute(
-            "channelVideos",  //
+            "channelVideos",
             youTube.channelVideos(
-                "UCjukbYOd6pjrMpNMFAOKYyw",  //
+//                "UCjukbYOd6pjrMpNMFAOKYyw",
+                "UCc98QQw1D-y38wg6mO3w4MQ", // Dan Vega
                 10, YouTube.Sort.VIEW_COUNT
             )
         )
