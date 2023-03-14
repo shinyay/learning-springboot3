@@ -7,9 +7,9 @@ import org.springframework.web.service.annotation.GetExchange
 interface YouTube {
 
     @GetExchange("/search?part=snippet&type=video")
-    fun channelVideos( //
-        @RequestParam channelId: String?,  //
-        @RequestParam maxResults: Int,  //
+    fun channelVideos(
+        @RequestParam channelId: String?,
+        @RequestParam maxResults: Int?,
         @RequestParam order: Sort?
     ): SearchListResponse?
 
