@@ -8,8 +8,9 @@ spring:
       client:
         registration:
           google:
-            clientId: 642634252040-0g911vto6i0967tt1hioltni4ncbs52e.apps.googleusercontent.com
-            clientSecret: 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
+            # Google Cloud Dashboard -> APIs & Service -> Credentials -> OAuth 2.0 Client IDs
+            clientId: XXXXXXXXXX.apps.googleusercontent.com
+            clientSecret: GOCSPX-YYYYYYYYYY
             scope: openid,profile,email,https://www.googleapis.com/auth/youtube
 logging:
   level:
