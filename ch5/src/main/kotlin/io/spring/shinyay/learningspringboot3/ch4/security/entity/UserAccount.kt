@@ -25,7 +25,7 @@ class UserAccount() {
         this.password = password
         this.authorities = authorities
             .map(::SimpleGrantedAuthority)
-            .map { it as GrantedAuthority }
+            .map { it }
             .toMutableList()
     }
 
