@@ -33,26 +33,6 @@ class SecurityConfig {
         }
     }
 
-//    @Bean
-//    fun userDetailsService(): UserDetailsService {
-//        val userDetailsManager: UserDetailsManager = InMemoryUserDetailsManager()
-//        userDetailsManager.createUser(
-//            User.withDefaultPasswordEncoder()
-//                .username("user")
-//                .password("password")
-//                .roles("USER")
-//                .build()
-//        )
-//        userDetailsManager.createUser(
-//            User.withDefaultPasswordEncoder()
-//                .username("admin")
-//                .password("password")
-//                .roles("ADMIN")
-//                .build()
-//        )
-//        return userDetailsManager
-//    }
-
     @Bean
     fun configureSecurity(http: HttpSecurity): SecurityFilterChain {
         http.authorizeHttpRequests()
