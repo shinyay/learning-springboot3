@@ -10,13 +10,16 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
 import io.spring.shinyay.learningspringboot3.ch5.video.service.VideoService
+import org.springframework.security.core.Authentication
 
 @Controller
 class HomeController(val videoService: VideoService) {
 
     @GetMapping("/")
-    fun index(model: Model): String {
+    fun index(model: Model, authentication: Authentication): String {
         model.addAttribute("videos", videoService.getVideos())
+        model.addAttribute("authentication", authentication)
+
         return "index"
     }
 
