@@ -21,18 +21,21 @@ class VideoService(val repository: VideoRepository) {
     fun initDatabase() {
         repository.save(
             VideoEntity(
+                "alice",
                 "Learning Spring Boot 3",
                 "Learn Spring Boot 3 with this book."
             )
         )
         repository.save(
             VideoEntity(
+                "alice",
                 "Learn how Spring Boot 3 works",
                 ""
             )
         )
         repository.save(
             VideoEntity(
+                "bob",
                 "Spring Framework 6",
                 "Learn how Spring Framework 6 works"
             )
