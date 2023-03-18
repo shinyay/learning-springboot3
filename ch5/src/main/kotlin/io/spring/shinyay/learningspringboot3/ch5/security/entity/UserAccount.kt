@@ -1,4 +1,4 @@
-package io.spring.shinyay.learningspringboot3.ch4.security.entity
+package io.spring.shinyay.learningspringboot3.ch5.security.entity
 
 import jakarta.persistence.*
 import org.springframework.security.core.GrantedAuthority
