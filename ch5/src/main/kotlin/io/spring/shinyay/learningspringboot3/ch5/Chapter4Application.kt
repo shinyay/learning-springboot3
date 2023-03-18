@@ -1,4 +1,4 @@
-package io.spring.shinyay.learningspringboot3.ch4
+package io.spring.shinyay.learningspringboot3.ch5
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
