@@ -1,8 +1,8 @@
-package io.spring.shinyay.learningspringboot3.ch4.security
+package io.spring.shinyay.learningspringboot3.ch5.security
 
-import io.spring.shinyay.learningspringboot3.ch4.security.entity.UserAccount
-import io.spring.shinyay.learningspringboot3.ch4.security.repository.UserManagementRepository
-import io.spring.shinyay.learningspringboot3.ch4.security.repository.UserRepository
+import io.spring.shinyay.learningspringboot3.ch5.security.entity.UserAccount
+import io.spring.shinyay.learningspringboot3.ch5.security.repository.UserManagementRepository
+import io.spring.shinyay.learningspringboot3.ch5.security.repository.UserRepository
 import org.springframework.boot.CommandLineRunner
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
