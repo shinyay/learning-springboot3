@@ -1,15 +1,15 @@
-package io.spring.shinyay.learningspringboot3.ch4.video.controller
+package io.spring.shinyay.learningspringboot3.ch5.video.controller
 
-import io.spring.shinyay.learningspringboot3.ch4.video.dto.UniversalSearch
-import io.spring.shinyay.learningspringboot3.ch4.video.dto.VideoSearch
-import io.spring.shinyay.learningspringboot3.ch4.video.dto.NewVideo
-import io.spring.shinyay.learningspringboot3.ch4.video.entity.VideoEntity
+import io.spring.shinyay.learningspringboot3.ch5.video.dto.UniversalSearch
+import io.spring.shinyay.learningspringboot3.ch5.video.dto.VideoSearch
+import io.spring.shinyay.learningspringboot3.ch5.video.dto.NewVideo
+import io.spring.shinyay.learningspringboot3.ch5.video.entity.VideoEntity
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
-import io.spring.shinyay.learningspringboot3.ch4.video.service.VideoService
+import io.spring.shinyay.learningspringboot3.ch5.video.service.VideoService
 
 @Controller
 class HomeController(val videoService: VideoService) {
