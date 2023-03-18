@@ -29,14 +29,6 @@ class HomeController(val videoService: VideoService) {
         return "redirect:/"
     }
 
-//    @PostMapping("/multi-field-search")
-//    fun multiFieldSearch(@ModelAttribute search: VideoSearch, model: Model): String {
-//        val searchResult: List<VideoEntity>? = videoService.search(search)
-//        model.addAttribute("videos", searchResult)
-//        return "index"
-//    }
-
-//    @PostMapping("/universal-search")
     @PostMapping("/search")
     fun universalSearch(@ModelAttribute search: UniversalSearch, model: Model): String {
         val searchResults = videoService.search(search)
