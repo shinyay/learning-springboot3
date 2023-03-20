@@ -4,6 +4,7 @@ import io.spring.shinyay.learningspringboot3.ch5.video.entity.VideoEntity
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
+
 class CoreDomainTest {
 
 	@Test
@@ -14,6 +15,13 @@ class CoreDomainTest {
 		assertThat(entity.name).isEqualTo("title")
 		assertThat(entity.description)
 			.isEqualTo("description")
+	}
+
+	@Test
+	fun toStringShouldAlsoBeTested() {
+		val entity = VideoEntity("alice", "title", "description")
+		assertThat(entity.toString())
+			.isEqualTo("VideoEntity{id=null, username='alice', name='title', description='description'}")
 	}
 
 }
