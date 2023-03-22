@@ -12,4 +12,8 @@ class VideoEntity(var username: String?, var name: String?, var description: Str
     var id: Long? = null
 
     constructor() : this(null, null, null)
+
+    override fun toString(): String {
+        return "VideoEntity(username=$username, name=$name, description=$description, id=$id)"
+    }
 }
