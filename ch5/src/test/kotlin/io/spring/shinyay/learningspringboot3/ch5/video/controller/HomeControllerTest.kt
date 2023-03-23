@@ -40,5 +40,7 @@ class HomeControllerTest {
                     containsString("Authorities: [ROLE_USER]")
                 )
             )
+            .andReturn()
+            .response.contentAsString
     }
 }
