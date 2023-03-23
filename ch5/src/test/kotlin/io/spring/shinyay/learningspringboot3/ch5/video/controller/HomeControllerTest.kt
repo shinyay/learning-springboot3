@@ -1,6 +1,7 @@
 package io.spring.shinyay.learningspringboot3.ch5.video.controller
 
 import io.spring.shinyay.learningspringboot3.ch5.video.service.VideoService
+import org.assertj.core.api.Assertions.assertThat
 import org.hamcrest.Matchers.containsString
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -42,5 +43,11 @@ class HomeControllerTest {
             )
             .andReturn()
             .response.contentAsString
+
+        assertThat(html).contains(
+            "<form action=\"/logout\"",
+            "<form action=\"/search\"",
+            "<form action=\"/new-video\""
+        )
     }
 }
