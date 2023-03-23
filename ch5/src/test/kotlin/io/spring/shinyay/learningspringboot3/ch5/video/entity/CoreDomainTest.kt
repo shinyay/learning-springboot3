@@ -1,4 +1,4 @@
-package io.spring.shinyay.learningspringboot3.ch4
+package io.spring.shinyay.learningspringboot3.ch5.video.entity
 
 import io.spring.shinyay.learningspringboot3.ch5.video.entity.VideoEntity
 import org.assertj.core.api.Assertions.assertThat
