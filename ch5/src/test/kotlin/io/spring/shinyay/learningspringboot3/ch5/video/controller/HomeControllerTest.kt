@@ -26,12 +26,19 @@ class HomeControllerTest {
     fun indexPageHasSeveralHtmlFroms() {
         val html = mvc.perform(
             get("/")
-        ).andExpect(
-            status().isOk
-        ).andExpect(
-            content().string(
-                containsString("Username: user")
-            )
         )
+            .andExpect(
+                status().isOk
+            )
+            .andExpect(
+                content().string(
+                    containsString("Username: user")
+                )
+            )
+            .andExpect(
+                content().string(
+                    containsString("Authorities: [ROLE_USER]")
+                )
+            )
     }
 }
