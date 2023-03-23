@@ -24,4 +24,19 @@ class CoreDomainTest {
 			.isEqualTo("VideoEntity{id=null, username='alice', name='title', description='description'}")
 	}
 
+	@Test
+	fun settersShouldMutateState() {
+		val entity = VideoEntity(
+			"alice", "title", "description"
+		)
+		entity.id = 99L
+		entity.name = "new name"
+		entity.description = "new desc"
+		entity.username = "bob"
+		assertThat(entity.id).isEqualTo(99L)
+		assertThat(entity.username).isEqualTo("bob")
+		assertThat(entity.name).isEqualTo("new name")
+		assertThat(entity.description) //
+			.isEqualTo("new desc")
+	}
 }
