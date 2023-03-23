@@ -11,4 +11,6 @@ import org.springframework.test.web.servlet.MockMvc
 @WebMvcTest(controllers = [HomeController::class])
 class HomeControllerTest {
 
+    @Autowired
+    lateinit var mvc: MockMvc
 }
