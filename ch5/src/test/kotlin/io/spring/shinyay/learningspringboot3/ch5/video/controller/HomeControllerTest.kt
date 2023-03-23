@@ -13,4 +13,7 @@ class HomeControllerTest {
 
     @Autowired
     lateinit var mvc: MockMvc
+
+    @MockBean
+    lateinit var videoService: VideoService
 }
