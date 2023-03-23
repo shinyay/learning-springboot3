@@ -14,6 +14,6 @@ class VideoEntity(var username: String?, var name: String?, var description: Str
     constructor() : this(null, null, null)
 
     override fun toString(): String {
-        return "VideoEntity(username=$username, name=$name, description=$description, id=$id)"
+        return "VideoEntity{id=$id, username='$username', name='$name', description='$description'}"
     }
 }
