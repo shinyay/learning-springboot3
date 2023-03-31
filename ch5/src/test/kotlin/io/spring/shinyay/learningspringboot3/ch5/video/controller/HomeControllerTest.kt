@@ -24,6 +24,7 @@ class HomeControllerTest {
     lateinit var videoService: VideoService
 
     @Test
+    @WithMockUser
     fun indexPageHasSeveralHtmlFromsIsOk() {
         val html = mvc.perform(
             get("/")
