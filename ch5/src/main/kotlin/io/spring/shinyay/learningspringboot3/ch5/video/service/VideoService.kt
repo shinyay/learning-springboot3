@@ -1,16 +1,16 @@
 package io.spring.shinyay.learningspringboot3.ch5.video.service
 
 import io.spring.shinyay.learningspringboot3.ch5.video.dto.NewVideo
-import io.spring.shinyay.learningspringboot3.ch5.video.dto.UniversalSearch
+import io.spring.shinyay.learningspringboot3.ch5.video.dto.Search
 import io.spring.shinyay.learningspringboot3.ch5.video.dto.VideoSearch
 import io.spring.shinyay.learningspringboot3.ch5.video.entity.VideoEntity
+import io.spring.shinyay.learningspringboot3.ch5.video.repository.VideoRepository
 import jakarta.annotation.PostConstruct
 import org.springframework.data.domain.Example
 import org.springframework.data.domain.ExampleMatcher.StringMatcher
 import org.springframework.data.domain.ExampleMatcher.matchingAny
 import org.springframework.stereotype.Service
 import org.springframework.util.StringUtils
-import io.spring.shinyay.learningspringboot3.ch5.video.repository.VideoRepository
 import java.util.*
 
 
@@ -67,11 +67,11 @@ class VideoService(val repository: VideoRepository) {
         return Collections.emptyList()
     }
 
-    fun search(universalSearch: UniversalSearch): List<VideoEntity>? {
+    fun search(search: Search): List<VideoEntity>? {
         val probe = VideoEntity()
-        if (StringUtils.hasText(universalSearch.value)) {
-            probe.name = universalSearch.value
-            probe.description = universalSearch.value
+        if (StringUtils.hasText(search.value)) {
+            probe.name = search.value
+            probe.description = search.value
         }
         val example: Example<VideoEntity> = Example.of(
             probe,
@@ -80,5 +80,18 @@ class VideoService(val repository: VideoRepository) {
                 .withStringMatcher(StringMatcher.CONTAINING)
         )
         return repository.findAll(example)
+    }
+
+    fun delete(videoId: Long) {
+        repository.findById(videoId)
+            .map { videoEntity: VideoEntity? ->
+                repository.delete(videoEntity!!)
+                true
+            }
+            .orElseThrow {
+                RuntimeException(
+                    "No video at $videoId"
+                )
+            }
     }
 }
