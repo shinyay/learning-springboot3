@@ -9,6 +9,13 @@
     <li>Authorities: {{authentication.authorities}}</li>
 </ul>
 
+<form action="/logout" method="post">
+    <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
+    <button type="submit">Logout</button>
+</form>
+
+<hr>
+
 <form action="/search" method="post">
     <label for="value">Search:</label>
     <input type="text" name="value">
@@ -16,9 +23,19 @@
     <button type="submit">Search</button>
 </form>
 
+{{#search}}
+    Searching: {{value}}
+{{/search}}
+
 <ul>
     {{#videos}}
-        <li>{{name}}</li>
+        <li>
+            {{name}}
+            <form action="/delete/videos/{{id}}" method="post">
+                <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
     {{/videos}}
 
     <form action="/new-video" method="post">
@@ -28,5 +45,3 @@
         <button type="submit">Submit</button>
     </form>
 </ul>
-
-
