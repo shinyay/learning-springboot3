@@ -66,7 +66,6 @@ class HomeControllerTest {
 
     @Test
     @WithMockUser
-    @Throws(Exception::class)
     fun postNewVideoShouldWork() {
         mvc.perform(
             post("/new-video")
