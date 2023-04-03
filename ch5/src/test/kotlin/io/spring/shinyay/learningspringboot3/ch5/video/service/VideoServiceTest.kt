@@ -62,8 +62,7 @@ class VideoServiceTest {
     fun deletingAVideoShouldWork() {
         // given
         val entity = VideoEntity(
-            "alice", "name",
-            "desc"
+            "alice", "name", "description"
         )
         entity.id = 1L
         `when`<Optional<VideoEntity?>>(repository.findById(1L))
