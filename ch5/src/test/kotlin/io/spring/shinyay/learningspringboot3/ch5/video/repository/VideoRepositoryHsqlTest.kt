@@ -1,12 +1,18 @@
 package io.spring.shinyay.learningspringboot3.ch5.video.repository
 
 import io.spring.shinyay.learningspringboot3.ch5.video.entity.VideoEntity
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 
 
 @DataJpaTest
-class VideoRepositoryHsqlTest(val repository: VideoRepository) {
+class VideoRepositoryHsqlTest() {
+
+    @Autowired
+    lateinit var repository: VideoRepository
 
     @BeforeEach
     fun setUp() {
@@ -29,5 +35,11 @@ class VideoRepositoryHsqlTest(val repository: VideoRepository) {
                 )
             )
         )
+    }
+
+    @Test
+    fun findAllShouldProduceAllVideos() {
+        val videos = repository.findAll()
+        assertThat(videos).hasSize(3)
     }
 }
