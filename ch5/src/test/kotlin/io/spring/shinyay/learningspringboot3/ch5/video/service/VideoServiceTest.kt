@@ -10,8 +10,10 @@ import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.ArgumentMatchers.any
 import org.mockito.BDDMockito.given
 import org.mockito.Mock
+import org.mockito.Mockito.verify
 import org.mockito.Mockito.`when`
 import org.mockito.junit.jupiter.MockitoExtension
+import java.util.*
 
 
 @ExtendWith(MockitoExtension::class)
@@ -54,5 +56,24 @@ class VideoServiceTest {
         assertThat(newVideo!!.name).isEqualTo("name")
         assertThat(newVideo.description).isEqualTo("description")
         assertThat(newVideo.username).isEqualTo("alice")
+    }
+
+    @Test
+    fun deletingAVideoShouldWork() {
+        // given
+        val entity = VideoEntity(
+            "alice", "name",
+            "desc"
+        )
+        entity.id = 1L
+        `when`<Optional<VideoEntity?>>(repository.findById(1L))
+            .thenReturn(Optional.of(entity) as Optional<VideoEntity?>)
+
+        // when
+        service.delete(1L)
+
+        // then
+        verify(repository).findById(1L)
+        verify(repository).delete(entity)
     }
 }
