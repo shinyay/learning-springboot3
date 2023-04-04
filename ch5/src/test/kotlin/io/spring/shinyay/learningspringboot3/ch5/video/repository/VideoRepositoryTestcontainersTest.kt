@@ -3,6 +3,9 @@ package io.spring.shinyay.learningspringboot3.ch5.video.repository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
+import org.springframework.context.ApplicationContextInitializer
+import org.springframework.context.ConfigurableApplicationContext
+import org.springframework.test.context.support.TestPropertySourceUtils
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
@@ -17,7 +20,9 @@ class VideoRepositoryTestcontainersTest(
 ) {
     @Container
     val database = PostgreSQLContainer<Nothing>("postgres:9.6.12").apply {
+        withDatabaseName("testdb")
         withUsername("postgres")
     }
+
 
 }
