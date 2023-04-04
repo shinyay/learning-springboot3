@@ -1,9 +1,10 @@
 package io.spring.shinyay.learningspringboot3.ch5.video.repository
 
+import io.spring.shinyay.learningspringboot3.ch5.video.entity.VideoEntity
+import org.junit.jupiter.api.BeforeEach
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
-import org.springframework.boot.test.util.TestPropertyValues
 import org.springframework.context.ApplicationContextInitializer
 import org.springframework.context.ConfigurableApplicationContext
 import org.springframework.test.context.ContextConfiguration
@@ -11,6 +12,7 @@ import org.springframework.test.context.support.TestPropertySourceUtils
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
+import java.util.List
 
 
 @Testcontainers
@@ -48,5 +50,28 @@ class VideoRepositoryTestcontainersTest(
                 "spring.jpa.hibernate.ddl-auto=create-drop"
             )
         }
+    }
+
+    @BeforeEach
+    fun setUp() {
+        repository.saveAll( //
+            listOf( //
+                VideoEntity( //
+                    "alice",  //
+                    "Need HELP with your SPRING BOOT 3 App?",  //
+                    "SPRING BOOT 3 will only speed things up."
+                ),
+                VideoEntity(
+                    "alice",  //
+                    "Don't do THIS to your own CODE!",  //
+                    "As a pro developer, never ever EVER do this to your code."
+                ),
+                VideoEntity(
+                    "bob",  //
+                    "SECRETS to fix BROKEN CODE!",  //
+                    "Discover ways to not only debug your code"
+                )
+            )
+        )
     }
 }
