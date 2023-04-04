@@ -6,6 +6,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.boot.test.util.TestPropertyValues
 import org.springframework.context.ApplicationContextInitializer
 import org.springframework.context.ConfigurableApplicationContext
+import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.support.TestPropertySourceUtils
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.junit.jupiter.Container
@@ -15,6 +16,7 @@ import org.testcontainers.junit.jupiter.Testcontainers
 @Testcontainers
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@ContextConfiguration(initializers = [VideoRepositoryTestcontainersTest.DataSourceInitializer::class])
 class VideoRepositoryTestcontainersTest(
     @Autowired
     val repository: VideoRepository
@@ -28,7 +30,7 @@ class VideoRepositoryTestcontainersTest(
     }
 
 
-    internal class Initializer : ApplicationContextInitializer<ConfigurableApplicationContext> {
+    internal class DataSourceInitializer : ApplicationContextInitializer<ConfigurableApplicationContext> {
 //        override fun initialize(configurableApplicationContext: ConfigurableApplicationContext) {
 //            TestPropertyValues.of(
 //                "spring.datasource.url=" + database.jdbcUrl,
