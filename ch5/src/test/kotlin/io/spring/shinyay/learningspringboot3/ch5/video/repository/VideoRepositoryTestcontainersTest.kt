@@ -1,7 +1,9 @@
 package io.spring.shinyay.learningspringboot3.ch5.video.repository
 
 import io.spring.shinyay.learningspringboot3.ch5.video.entity.VideoEntity
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
@@ -12,7 +14,6 @@ import org.springframework.test.context.support.TestPropertySourceUtils
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
-import java.util.List
 
 
 @Testcontainers
@@ -74,4 +75,11 @@ class VideoRepositoryTestcontainersTest(
             )
         )
     }
+
+    @Test
+    fun findAllShouldProduceAllVideos() {
+        val videos = repository.findAll()
+        assertThat(videos).hasSize(3)
+    }
+
 }
