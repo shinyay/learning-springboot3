@@ -34,6 +34,7 @@ class VideoRepositoryTestcontainersTest(
 
 
     internal class DataSourceInitializer : ApplicationContextInitializer<ConfigurableApplicationContext> {
+        //Spring 1.5
 //        override fun initialize(configurableApplicationContext: ConfigurableApplicationContext) {
 //            TestPropertyValues.of(
 //                "spring.datasource.url=" + database.jdbcUrl,
