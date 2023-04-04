@@ -56,4 +56,19 @@ class VideoRepositoryHsqlTest(
                 Tuple.tuple("Need HELP with your SPRING BOOT 3 App?")
             )
     }
+
+    @Test
+    fun findByNameOrDescriptionShouldFindTwo() {
+        val videos = repository
+            .findByNameContainsOrDescriptionContainsAllIgnoreCase(
+                "CoDe", "YOUR CODE"
+            )
+        assertThat(videos).hasSize(1)
+        assertThat(videos)
+            .extracting(VideoEntity::description)
+            .contains(
+                Tuple.tuple("As a pro developer, never ever EVER do this to your code.",
+                    "Discover ways to not only debug your code")
+            )
+    }
 }
