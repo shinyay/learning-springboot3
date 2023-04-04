@@ -53,6 +53,9 @@ class VideoRepositoryTestcontainersTest(
                 "spring.jpa.hibernate.ddl-auto=create-drop"
             )
         }
+
+        // Spring Boot 2.3.x
+        // @DynamicPropertySource
     }
 
     @BeforeEach
