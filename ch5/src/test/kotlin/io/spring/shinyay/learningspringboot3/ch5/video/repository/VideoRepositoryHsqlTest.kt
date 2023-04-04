@@ -49,7 +49,7 @@ class VideoRepositoryHsqlTest(
 
     @Test
     fun findByNameShouldRetrieveOneEntry() {
-        val videos = repository.findByNameContainsIgnoreCase("SpRinG bOOt 2")
+        val videos = repository.findByNameContainsIgnoreCase("SpRinG bOOt 3")
         assertThat(videos).hasSize(1)
         assertThat(videos).extracting(VideoEntity::name)
             .containsExactlyInAnyOrder(
