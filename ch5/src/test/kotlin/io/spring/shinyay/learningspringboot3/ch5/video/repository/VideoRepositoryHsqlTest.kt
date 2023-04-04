@@ -9,10 +9,13 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 
 
 @DataJpaTest
-class VideoRepositoryHsqlTest() {
-
+class VideoRepositoryHsqlTest(
     @Autowired
-    lateinit var repository: VideoRepository
+    val repository: VideoRepository
+) {
+
+//    @Autowired
+//    lateinit var repository: VideoRepository
 
     @BeforeEach
     fun setUp() {
