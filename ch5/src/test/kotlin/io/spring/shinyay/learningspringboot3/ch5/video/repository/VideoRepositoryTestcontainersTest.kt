@@ -29,13 +29,22 @@ class VideoRepositoryTestcontainersTest(
 
 
     internal class Initializer : ApplicationContextInitializer<ConfigurableApplicationContext> {
-        override fun initialize(configurableApplicationContext: ConfigurableApplicationContext) {
-            TestPropertyValues.of(
+//        override fun initialize(configurableApplicationContext: ConfigurableApplicationContext) {
+//            TestPropertyValues.of(
+//                "spring.datasource.url=" + database.jdbcUrl,
+//                "spring.datasource.username=" + database.username,
+//                "spring.datasource.password=" + database.password
+//            ).applyTo(configurableApplicationContext.environment)
+//        }
+
+        override fun initialize(applicationContext: ConfigurableApplicationContext) {
+            TestPropertySourceUtils.addInlinedPropertiesToEnvironment(
+                applicationContext,
                 "spring.datasource.url=" + database.jdbcUrl,
                 "spring.datasource.username=" + database.username,
-                "spring.datasource.password=" + database.password
-            ).applyTo(configurableApplicationContext.environment)
+                "spring.datasource.password=" + database.password,
+                "spring.jpa.hibernate.ddl-auto=create-drop"
+            )
         }
-
     }
 }
