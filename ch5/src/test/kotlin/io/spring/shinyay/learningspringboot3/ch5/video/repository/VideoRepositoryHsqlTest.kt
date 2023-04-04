@@ -2,6 +2,7 @@ package io.spring.shinyay.learningspringboot3.ch5.video.repository
 
 import io.spring.shinyay.learningspringboot3.ch5.video.entity.VideoEntity
 import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.groups.Tuple
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -44,5 +45,15 @@ class VideoRepositoryHsqlTest(
     fun findAllShouldProduceAllVideos() {
         val videos = repository.findAll()
         assertThat(videos).hasSize(3)
+    }
+
+    @Test
+    fun findByNameShouldRetrieveOneEntry() {
+        val videos = repository.findByNameContainsIgnoreCase("SpRinG bOOt 2")
+        assertThat(videos).hasSize(1)
+        assertThat(videos).extracting(VideoEntity::name)
+            .containsExactlyInAnyOrder(
+                Tuple.tuple("Need HELP with your SPRING BOOT 3 App?")
+            )
     }
 }
