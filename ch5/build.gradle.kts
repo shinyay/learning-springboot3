@@ -15,6 +15,8 @@ repositories {
 	mavenCentral()
 }
 
+extra["testcontainersVersion"] = "1.17.6"
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-mustache")
