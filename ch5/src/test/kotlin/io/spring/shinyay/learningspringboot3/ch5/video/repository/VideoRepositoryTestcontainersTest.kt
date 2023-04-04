@@ -34,7 +34,7 @@ class VideoRepositoryTestcontainersTest(
 
 
     internal class DataSourceInitializer : ApplicationContextInitializer<ConfigurableApplicationContext> {
-        //Spring 1.5
+        // Spring Boot 1.5.x
 //        override fun initialize(configurableApplicationContext: ConfigurableApplicationContext) {
 //            TestPropertyValues.of(
 //                "spring.datasource.url=" + database.jdbcUrl,
@@ -43,6 +43,7 @@ class VideoRepositoryTestcontainersTest(
 //            ).applyTo(configurableApplicationContext.environment)
 //        }
 
+        // Spring Boot 2.x
         override fun initialize(applicationContext: ConfigurableApplicationContext) {
             TestPropertySourceUtils.addInlinedPropertiesToEnvironment(
                 applicationContext,
