@@ -42,7 +42,7 @@ class VideoRepositoryTestcontainersTest(
             registry.add("spring.jpa.hibernate.ddl-auto") {"create-drop"}
         }
     }
-    
+
 //    internal class DataSourceInitializer : ApplicationContextInitializer<ConfigurableApplicationContext> {
 // Spring Boot 2.x
 //        override fun initialize(configurableApplicationContext: ConfigurableApplicationContext) {
