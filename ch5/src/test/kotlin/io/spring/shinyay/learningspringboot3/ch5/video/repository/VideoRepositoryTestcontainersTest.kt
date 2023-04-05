@@ -99,5 +99,10 @@ class VideoRepositoryTestcontainersTest(
         assertThat(videos).hasSize(1)
     }
 
+    @Test
+    fun findByNameOrDescription() {
+        val videos = repository.findByNameContainsOrDescriptionContainsAllIgnoreCase("CODE", "your code")
+        assertThat(videos).hasSize(2)
+    }
 
 }
