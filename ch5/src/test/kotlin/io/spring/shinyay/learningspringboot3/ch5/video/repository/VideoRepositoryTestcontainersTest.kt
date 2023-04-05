@@ -38,7 +38,7 @@ class VideoRepositoryTestcontainersTest(
         @JvmStatic
         @DynamicPropertySource
         fun properties(registry: DynamicPropertyRegistry) {
-
+            registry.add("spring.datasource.url", database::getJdbcUrl)
         }
     }
 
