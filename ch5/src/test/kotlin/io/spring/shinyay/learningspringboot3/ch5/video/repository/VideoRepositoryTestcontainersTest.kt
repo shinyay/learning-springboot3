@@ -10,6 +10,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.context.ApplicationContextInitializer
 import org.springframework.context.ConfigurableApplicationContext
 import org.springframework.test.context.ContextConfiguration
+import org.springframework.test.context.DynamicPropertyRegistry
+import org.springframework.test.context.DynamicPropertySource
 import org.springframework.test.context.support.TestPropertySourceUtils
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.junit.jupiter.Container
@@ -19,7 +21,7 @@ import org.testcontainers.junit.jupiter.Testcontainers
 @Testcontainers
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@ContextConfiguration(initializers = [VideoRepositoryTestcontainersTest.DataSourceInitializer::class])
+//@ContextConfiguration(initializers = [VideoRepositoryTestcontainersTest.DataSourceInitializer::class])
 class VideoRepositoryTestcontainersTest(
     @Autowired
     val repository: VideoRepository
@@ -30,11 +32,19 @@ class VideoRepositoryTestcontainersTest(
             withDatabaseName("testdb")
             withUsername("postgres")
         }
+
+        // Spring Boot 2.3.x
+        // @DynamicPropertySource
+        @JvmStatic
+        @DynamicPropertySource
+        fun properties(registry: DynamicPropertyRegistry) {
+
+        }
     }
 
 
-    internal class DataSourceInitializer : ApplicationContextInitializer<ConfigurableApplicationContext> {
-        // Spring Boot 1.5.x
+//    internal class DataSourceInitializer : ApplicationContextInitializer<ConfigurableApplicationContext> {
+// Spring Boot 2.x
 //        override fun initialize(configurableApplicationContext: ConfigurableApplicationContext) {
 //            TestPropertyValues.of(
 //                "spring.datasource.url=" + database.jdbcUrl,
@@ -43,20 +53,17 @@ class VideoRepositoryTestcontainersTest(
 //            ).applyTo(configurableApplicationContext.environment)
 //        }
 
-        // Spring Boot 2.x
-        override fun initialize(applicationContext: ConfigurableApplicationContext) {
-            TestPropertySourceUtils.addInlinedPropertiesToEnvironment(
-                applicationContext,
-                "spring.datasource.url=" + database.jdbcUrl,
-                "spring.datasource.username=" + database.username,
-                "spring.datasource.password=" + database.password,
-                "spring.jpa.hibernate.ddl-auto=create-drop"
-            )
-        }
-
-        // Spring Boot 2.3.x
-        // @DynamicPropertySource
-    }
+// Spring Boot 1.5.x
+//        override fun initialize(applicationContext: ConfigurableApplicationContext) {
+//            TestPropertySourceUtils.addInlinedPropertiesToEnvironment(
+//                applicationContext,
+//                "spring.datasource.url=" + database.jdbcUrl,
+//                "spring.datasource.username=" + database.username,
+//                "spring.datasource.password=" + database.password,
+//                "spring.jpa.hibernate.ddl-auto=create-drop"
+//            )
+//        }
+//    }
 
     @BeforeEach
     fun setUp() {
