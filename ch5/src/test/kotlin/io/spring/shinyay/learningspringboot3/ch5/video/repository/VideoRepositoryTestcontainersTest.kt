@@ -67,21 +67,21 @@ class VideoRepositoryTestcontainersTest(
 
     @BeforeEach
     fun setUp() {
-        repository.saveAll( //
-            listOf( //
-                VideoEntity( //
-                    "alice",  //
-                    "Need HELP with your SPRING BOOT 3 App?",  //
+        repository.saveAll(
+            listOf(
+                VideoEntity(
+                    "alice",
+                    "Need HELP with your SPRING BOOT 3 App?",
                     "SPRING BOOT 3 will only speed things up."
                 ),
                 VideoEntity(
-                    "alice",  //
-                    "Don't do THIS to your own CODE!",  //
+                    "alice",
+                    "Don't do THIS to your own CODE!",
                     "As a pro developer, never ever EVER do this to your code."
                 ),
                 VideoEntity(
-                    "bob",  //
-                    "SECRETS to fix BROKEN CODE!",  //
+                    "bob",
+                    "SECRETS to fix BROKEN CODE!",
                     "Discover ways to not only debug your code"
                 )
             )
