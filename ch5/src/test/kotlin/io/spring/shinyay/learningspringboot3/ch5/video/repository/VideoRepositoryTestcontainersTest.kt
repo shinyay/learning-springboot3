@@ -12,7 +12,6 @@ import org.springframework.test.context.DynamicPropertySource
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
-import java.lang.String
 
 
 @Testcontainers
@@ -93,5 +92,12 @@ class VideoRepositoryTestcontainersTest(
         val videos = repository.findAll()
         assertThat(videos).hasSize(3)
     }
+
+    @Test
+    fun findByName() {
+        val videos = repository.findByNameContainsIgnoreCase("SPRING BOOT 3")
+        assertThat(videos).hasSize(1)
+    }
+
 
 }
