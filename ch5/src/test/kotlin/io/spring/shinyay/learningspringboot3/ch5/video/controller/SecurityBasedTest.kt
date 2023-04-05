@@ -14,5 +14,10 @@ class SecurityBasedTest @Autowired constructor(
     private val mockMvc: MockMvc,
     @MockBean val videoService: VideoService) {
 
-
+    @Test
+    fun unauthUserShouldNotAccessHomePage() {
+        mockMvc
+            .perform(MockMvcRequestBuilders.get("/"))
+            .andExpect(MockMvcResultMatchers.status().isUnauthorized)
+    }
 }
