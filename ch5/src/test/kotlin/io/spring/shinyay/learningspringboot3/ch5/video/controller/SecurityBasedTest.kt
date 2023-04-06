@@ -29,4 +29,12 @@ class SecurityBasedTest @Autowired constructor(
             .perform(MockMvcRequestBuilders.get("/"))
             .andExpect(MockMvcResultMatchers.status().isOk)
     }
+
+    @Test
+    @WithMockUser(username = "alice", roles = ["ADMIN"])
+    fun adminUserShouldAccessHomePage() {
+        mockMvc
+            .perform(MockMvcRequestBuilders.get("/"))
+            .andExpect(MockMvcResultMatchers.status().isOk)
+    }
 }
