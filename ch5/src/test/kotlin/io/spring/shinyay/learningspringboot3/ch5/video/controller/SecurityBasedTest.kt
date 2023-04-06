@@ -59,6 +59,6 @@ class SecurityBasedTest @Autowired constructor(
                 .param("description", "new description")
                 .with(SecurityMockMvcRequestPostProcessors.csrf())
             )
-            .andExpect(MockMvcResultMatchers.status().isOk())
+            .andExpect(MockMvcResultMatchers.status().is3xxRedirection)
     }
 }
