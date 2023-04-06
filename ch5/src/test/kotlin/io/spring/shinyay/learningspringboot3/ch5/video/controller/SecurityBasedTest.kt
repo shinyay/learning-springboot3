@@ -60,5 +60,6 @@ class SecurityBasedTest @Autowired constructor(
                 .with(SecurityMockMvcRequestPostProcessors.csrf())
             )
             .andExpect(MockMvcResultMatchers.status().is3xxRedirection)
+            .andExpect(MockMvcResultMatchers.redirectedUrl("/"))
     }
 }
