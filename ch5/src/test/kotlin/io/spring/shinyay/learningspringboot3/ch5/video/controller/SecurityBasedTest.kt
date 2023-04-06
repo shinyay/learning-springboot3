@@ -49,4 +49,16 @@ class SecurityBasedTest @Autowired constructor(
             )
             .andExpect(MockMvcResultMatchers.status().isUnauthorized())
     }
+
+    @Test
+    @WithMockUser(username = "alice", roles = ["USER"])
+    fun newVideoFromUserShouldWork() {
+        mockMvc
+            .perform(MockMvcRequestBuilders.post("/new-video")
+                .param("name", "new video")
+                .param("description", "new description")
+                .with(SecurityMockMvcRequestPostProcessors.csrf())
+            )
+            .andExpect(MockMvcResultMatchers.status().isOk())
+    }
 }
