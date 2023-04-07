@@ -1,9 +1,9 @@
-# Learning Spring Boot 3 - Chapter 5
+# Learning Spring Boot 3 - Chapter 6
 Securing an Application with Spring Boot
 
 ![start.spring.io](https://user-images.githubusercontent.com/3072734/230280091-8c79b452-3b70-48cb-9fbc-05057b5e401e.png)
 
-I'm learning **Chapter 5** of [Learning Spring Boot 3](https://www.packtpub.com/product/learning-spring-boot-30-third-edition/9781803233307).
+I'm learning **Chapter 6** of [Learning Spring Boot 3](https://www.packtpub.com/product/learning-spring-boot-30-third-edition/9781803233307).
 
 ## Description
 
