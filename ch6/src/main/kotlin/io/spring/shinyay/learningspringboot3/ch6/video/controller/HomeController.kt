@@ -1,5 +1,6 @@
 package io.spring.shinyay.learningspringboot3.ch6.video.controller
 
+import io.spring.shinyay.learningspringboot3.ch6.video.config.AppConfig
 import io.spring.shinyay.learningspringboot3.ch6.video.dto.NewVideo
 import io.spring.shinyay.learningspringboot3.ch6.video.dto.Search
 import io.spring.shinyay.learningspringboot3.ch6.video.service.VideoService
@@ -13,7 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping
 
 
 @Controller
-class HomeController(val videoService: VideoService) {
+class HomeController(
+    val videoService: VideoService,
+    val appConfig: AppConfig) {
 
     @GetMapping("/")
     fun index(model: Model, authentication: Authentication): String {
