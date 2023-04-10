@@ -1,6 +1,6 @@
-package io.spring.shinyay.learningspringboot3.ch5.video.controller
+package io.spring.shinyay.learningspringboot3.ch6.video.controller
 
-import io.spring.shinyay.learningspringboot3.ch5.video.service.VideoService
+import io.spring.shinyay.learningspringboot3.ch6.video.service.VideoService
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest

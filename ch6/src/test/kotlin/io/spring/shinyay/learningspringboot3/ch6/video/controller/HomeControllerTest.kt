@@ -1,7 +1,7 @@
-package io.spring.shinyay.learningspringboot3.ch5.video.controller
+package io.spring.shinyay.learningspringboot3.ch6.video.controller
 
-import io.spring.shinyay.learningspringboot3.ch5.video.dto.NewVideo
-import io.spring.shinyay.learningspringboot3.ch5.video.service.VideoService
+import io.spring.shinyay.learningspringboot3.ch6.video.dto.NewVideo
+import io.spring.shinyay.learningspringboot3.ch6.video.service.VideoService
 import org.assertj.core.api.Assertions.assertThat
 import org.hamcrest.Matchers.containsString
 import org.junit.jupiter.api.Test

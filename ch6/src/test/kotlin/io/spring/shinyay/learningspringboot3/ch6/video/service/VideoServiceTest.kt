@@ -1,8 +1,8 @@
-package io.spring.shinyay.learningspringboot3.ch5.video.service
+package io.spring.shinyay.learningspringboot3.ch6.video.service
 
-import io.spring.shinyay.learningspringboot3.ch5.video.dto.NewVideo
-import io.spring.shinyay.learningspringboot3.ch5.video.entity.VideoEntity
-import io.spring.shinyay.learningspringboot3.ch5.video.repository.VideoRepository
+import io.spring.shinyay.learningspringboot3.ch6.video.dto.NewVideo
+import io.spring.shinyay.learningspringboot3.ch6.video.entity.VideoEntity
+import io.spring.shinyay.learningspringboot3.ch6.video.repository.VideoRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
