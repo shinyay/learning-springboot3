@@ -1,4 +1,4 @@
-package io.spring.shinyay.learningspringboot3.ch5.video.entity
+package io.spring.shinyay.learningspringboot3.ch6.video.entity
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

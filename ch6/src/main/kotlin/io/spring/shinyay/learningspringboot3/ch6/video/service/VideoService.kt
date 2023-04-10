@@ -1,10 +1,10 @@
-package io.spring.shinyay.learningspringboot3.ch5.video.service
+package io.spring.shinyay.learningspringboot3.ch6.video.service
 
-import io.spring.shinyay.learningspringboot3.ch5.video.dto.NewVideo
-import io.spring.shinyay.learningspringboot3.ch5.video.dto.Search
-import io.spring.shinyay.learningspringboot3.ch5.video.dto.VideoSearch
-import io.spring.shinyay.learningspringboot3.ch5.video.entity.VideoEntity
-import io.spring.shinyay.learningspringboot3.ch5.video.repository.VideoRepository
+import io.spring.shinyay.learningspringboot3.ch6.video.dto.NewVideo
+import io.spring.shinyay.learningspringboot3.ch6.video.dto.Search
+import io.spring.shinyay.learningspringboot3.ch6.video.dto.VideoSearch
+import io.spring.shinyay.learningspringboot3.ch6.video.entity.VideoEntity
+import io.spring.shinyay.learningspringboot3.ch6.video.repository.VideoRepository
 import jakarta.annotation.PostConstruct
 import org.springframework.data.domain.Example
 import org.springframework.data.domain.ExampleMatcher.StringMatcher

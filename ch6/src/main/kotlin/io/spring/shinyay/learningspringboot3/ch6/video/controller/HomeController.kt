@@ -1,8 +1,8 @@
-package io.spring.shinyay.learningspringboot3.ch5.video.controller
+package io.spring.shinyay.learningspringboot3.ch6.video.controller
 
-import io.spring.shinyay.learningspringboot3.ch5.video.dto.NewVideo
-import io.spring.shinyay.learningspringboot3.ch5.video.dto.Search
-import io.spring.shinyay.learningspringboot3.ch5.video.service.VideoService
+import io.spring.shinyay.learningspringboot3.ch6.video.dto.NewVideo
+import io.spring.shinyay.learningspringboot3.ch6.video.dto.Search
+import io.spring.shinyay.learningspringboot3.ch6.video.service.VideoService
 import org.springframework.security.core.Authentication
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
