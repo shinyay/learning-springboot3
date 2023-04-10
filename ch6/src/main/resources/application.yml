@@ -4,7 +4,7 @@ spring:
       expose-request-attributes: true
 logging:
   level:
-    io.spring.shinyay.learningspringboot3.ch5: DEBUG
+    io.spring.shinyay.learningspringboot3.ch6: DEBUG
     org.springframework.security: TRACE
     org.springframework.security.oauth2: TRACE
     org.springframework.web: TRACE
