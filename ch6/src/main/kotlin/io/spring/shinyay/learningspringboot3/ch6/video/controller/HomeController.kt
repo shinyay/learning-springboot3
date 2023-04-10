@@ -22,6 +22,8 @@ class HomeController(
     fun index(model: Model, authentication: Authentication): String {
         model.addAttribute("videos", videoService.getVideos())
         model.addAttribute("authentication", authentication)
+        model.addAttribute("header", appConfig.header)
+        model.addAttribute("intro", appConfig.intro)
 
         return "index"
     }
