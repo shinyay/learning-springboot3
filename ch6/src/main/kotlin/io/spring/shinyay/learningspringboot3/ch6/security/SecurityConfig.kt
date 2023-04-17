@@ -4,16 +4,24 @@ import io.spring.shinyay.learningspringboot3.ch6.security.entity.UserAccount
 import io.spring.shinyay.learningspringboot3.ch6.security.repository.UserManagementRepository
 import io.spring.shinyay.learningspringboot3.ch6.security.repository.UserRepository
 import org.springframework.boot.CommandLineRunner
+import org.springframework.boot.context.properties.ConfigurationPropertiesBinding
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.core.convert.converter.Converter
 import org.springframework.http.HttpMethod
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
+import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.web.SecurityFilterChain
 
 
 @Configuration
 class SecurityConfig {
+
+
+    internal interface GrantedAuthorityCnv : Converter<String?, GrantedAuthority?>
+
+
 
     @Bean
     fun initUsers(repository: UserManagementRepository): CommandLineRunner? {
