@@ -11,17 +11,18 @@ import org.springframework.core.convert.converter.Converter
 import org.springframework.http.HttpMethod
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.core.GrantedAuthority
+import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.web.SecurityFilterChain
 
 
 @Configuration
 class SecurityConfig {
-
-
-    internal interface GrantedAuthorityCnv : Converter<String?, GrantedAuthority?>
-
-
+    @Bean
+    @ConfigurationPropertiesBinding
+    fun converter(): Converter<String?, GrantedAuthority?>? {
+        return Converter { source -> SimpleGrantedAuthority(source) }
+    }
 
     @Bean
     fun initUsers(repository: UserManagementRepository): CommandLineRunner? {
