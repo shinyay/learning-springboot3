@@ -13,15 +13,19 @@ app:
   config:
     header: Greetings Test Team!
     intro: If you run into issues while testing, let me know!
-    users[0]:
-      username: test1
-      password: password
-      authorities[0]: ROLE_NOTHING
-    users[1]:
-      username: test2
-      password: password
-      authorities[0]: ROLE_USER
-    users[2]:
-      username: test3
-      password: password
-      authorities[0]: ROLE_ADMIN
+    users:
+      -
+        username: test1
+        password: password
+        authorities:
+          - ROLE_NOTHING
+      -
+        username: test2
+        password: password
+        authorities:
+          - ROLE_USER
+      -
+        username: test3
+        password: password
+        authorities[0]:
+          - ROLE_ADMIN
