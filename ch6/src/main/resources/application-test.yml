@@ -11,17 +11,17 @@ logging:
     org.springframework.web.reactive: TRACE
 app:
   config:
-    header: Greetings Learning Spring Boot 3.0 fans!
-    intro: In this chapter, we are learning how to externalize using property files.
+    header: Greetings Test Team!
+    intro: If you run into issues while testing, let me know!
     users[0]:
-      username: alice
+      username: test1
       password: password
-      authorities[0]: ROLE_USER
+      authorities[0]: ROLE_NOTHING
     users[1]:
-      username: bob
+      username: test2
       password: password
       authorities[0]: ROLE_USER
     users[2]:
-      username: admin
+      username: test3
       password: password
       authorities[0]: ROLE_ADMIN
