@@ -13,15 +13,19 @@ app:
   config:
     header: Greetings Learning Spring Boot 3.0 fans!
     intro: In this chapter, we are learning how to externalize using property files.
-    users[0]:
-      username: alice
-      password: password
-      authorities[0]: ROLE_USER
-    users[1]:
-      username: bob
-      password: password
-      authorities[0]: ROLE_USER
-    users[2]:
-      username: admin
-      password: password
-      authorities[0]: ROLE_ADMIN
+    users:
+      -
+        username: alice
+        password: password
+        authorities:
+          - ROLE_USER
+      -
+        username: bob
+        password: password
+        authorities:
+          - ROLE_USER
+      -
+        username: admin
+        password: password
+        authorities[0]:
+          - ROLE_ADMIN
