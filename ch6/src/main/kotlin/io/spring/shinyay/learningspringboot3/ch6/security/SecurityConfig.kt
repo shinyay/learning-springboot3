@@ -1,8 +1,8 @@
 package io.spring.shinyay.learningspringboot3.ch6.security
 
-import io.spring.shinyay.learningspringboot3.ch6.security.entity.UserAccount
 import io.spring.shinyay.learningspringboot3.ch6.security.repository.UserManagementRepository
 import io.spring.shinyay.learningspringboot3.ch6.security.repository.UserRepository
+import io.spring.shinyay.learningspringboot3.ch6.video.config.AppConfig
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.context.properties.ConfigurationPropertiesBinding
 import org.springframework.context.annotation.Bean
@@ -26,13 +26,18 @@ class SecurityConfig {
         return Converter { source -> SimpleGrantedAuthority(source) }
     }
 
+//    @Bean
+//    fun initUsers(repository: UserManagementRepository): CommandLineRunner? {
+//        return CommandLineRunner {
+//            repository.save(UserAccount("alice", "password", "ROLE_USER"))
+//            repository.save(UserAccount("bob", "password", "ROLE_USER"))
+//            repository.save(UserAccount("admin", "password", "ROLE_ADMIN"))
+//        }
+//    }
+
     @Bean
-    fun initUsers(repository: UserManagementRepository): CommandLineRunner? {
-        return CommandLineRunner {
-            repository.save(UserAccount("alice", "password", "ROLE_USER"))
-            repository.save(UserAccount("bob", "password", "ROLE_USER"))
-            repository.save(UserAccount("admin", "password", "ROLE_ADMIN"))
-        }
+    fun initUsers(repository: UserManagementRepository, appConfig: AppConfig): CommandLineRunner? {
+        return CommandLineRunner { args: Array<String?>? -> repository.saveAll(appConfig.users) }
     }
 
     @Bean
