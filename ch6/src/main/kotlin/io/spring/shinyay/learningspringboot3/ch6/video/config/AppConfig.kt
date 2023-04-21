@@ -7,5 +7,5 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 data class AppConfig (
     val header: String,
     val intro: String,
-    val list: MutableList<UserAccount>
+    val users: MutableList<UserAccount>
 )
